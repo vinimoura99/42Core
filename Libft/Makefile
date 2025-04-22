@@ -46,7 +46,7 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $(SRC)
 	ar rcs $(NAME) $(OBJ) #ar rcs é utilizado para criar ou atualizar uma biblioteca estática no Unix/Linux
 
