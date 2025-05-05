@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   pgdc.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmoura-d <vmoura-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/04 10:33:28 by vmoura-d          #+#    #+#             */
-/*   Updated: 2025/05/06 11:29:33 by vmoura-d         ###   ########.fr       */
+/*   Created: 2025/05/06 10:06:21 by vmoura-d          #+#    #+#             */
+/*   Updated: 2025/05/06 10:07:14 by vmoura-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
 
-char    *ft_strcpy(char *dest, const char *src)
+int pgcd(int a, int b)
 {
-    int i = 0;
-
-    while (src[i] != '\0')
+    while (b != 0)
     {
-        dest[i] = src[i];
-        i++;
+        int temp = b;
+        b = a % b;
+        a = temp;
     }
-    dest[i] = '\0';
-    return dest;
+    return a;
 }
 
-/*int main(int ac, char **av)
+int main(int ac, char **av)
 {
-    if(ac == 3)
+    if (ac == 3)
     {
-        printf("Argumentos iniciais: \n Argumento 1 -> %s \n Argumento 2 -> %s \n",av[1],av[2]);
-        ft_strcpy(av[1],av[2]);
-        printf("Argumentos finais: \n Argumento 1 -> %s \n Argumento 2 -> %s",av[1],av[2]);
-
+        int a = atoi(av[1]);
+        int b = atoi(av[2]);
+        if (a > 0 && b > 0)
+            printf("%d\n", pgcd(a, b));
+        else
+            printf("\n");
     }
-}*/
+    else
+        printf("\n");
+    return 0;
+}
