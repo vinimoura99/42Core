@@ -1,129 +1,96 @@
-
+````markdown
 # ft_printf
 
-## About
+A custom implementation of the C standard `printf` function, built as part of the [42 School](https://42.fr/en/homepage/) curriculum.  
+This project focuses on understanding formatted output, variadic functions, and low-level string/number handling in C.
 
-**ft_printf** is a custom implementation of the `printf` function in C. This project aims to help understand how the standard `printf` function works by implementing a version of it from scratch. The project involves working with variable argument lists, type casting, and custom formatting.
-
----
-
-## Features
-
-The **ft_printf** function supports several format specifiers:
-
-- **%s**: String
-- **%d / %i**: Signed integers
-- **%x / %X**: Unsigned hexadecimal integers
-- **%c**: Character
-- **%p**: Pointer address
-- **%u**: Unsigned integers
-- **%%**: Literal percent sign
-
-Additional features such as width and precision formatting may also be supported depending on your implementation.
+> 🧠 Part of [vinimoura99/42core](https://github.com/vinimoura99/42core)  
+> 📁 Explore other projects: [`libft`](https://github.com/vinimoura99/42core/tree/main/libft), [`get_next_line`](https://github.com/vinimoura99/42core/tree/main/get_next_line)
 
 ---
 
-## Table of Contents
+## ✅ Supported Format Specifiers
 
-- [About ft_printf](#about)
-- [Features](#features)
-- [Compiling ft_printf](#compiling-ft_printf)
-- [Testing ft_printf](#testing-ft_printf)
-- [Contributing](#contributing)
-- [License](#license)
+| Specifier | Description                  |
+|-----------|------------------------------|
+| `%c`      | Character                    |
+| `%s`      | String                       |
+| `%p`      | Pointer address (hex)        |
+| `%d`/`%i` | Signed integer               |
+| `%u`      | Unsigned integer             |
+| `%x`/`%X` | Unsigned hex (lower/upper)   |
+| `%%`      | Literal percent sign         |
 
 ---
 
-## Compiling ft_printf
+## 🚀 Getting Started
 
-### Steps to compile:
+### 1. Clone and Build
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/vinimoura99/42core.git
+```bash
+git clone https://github.com/vinimoura99/42core.git
+cd 42core/Printf
+make
 ````
 
-2. Navigate to the `ft_printf` directory:
+This compiles `libftprintf.a`—a static library you can use in any C project.
 
-   ```bash
-   cd 42core/ft_printf
-   ```
+### 2. Example Usage
 
-3. Run `make` to compile the library:
+```c
+#include "ft_printf.h"
 
-   ```bash
-   make
-   ```
+int main(void)
+{
+    ft_printf("Hello, %s! Here's a number: %d\n", "world", 42);
+    return 0;
+}
+```
 
-   This will generate the `ft_printf.a` static library.
+Compile it like so:
 
-4. To clean up the compiled files:
-
-   ```bash
-   make clean
-   ```
-
-5. To remove all compiled objects and the `.a` file:
-
-   ```bash
-   make fclean
-   ```
+```bash
+gcc main.c libftprintf.a -Iincludes
+```
 
 ---
 
-## Testing ft\_printf
+## 📂 Project Structure
 
-To test your **ft\_printf** implementation, create a test program that calls `ft_printf` with various format specifiers and compare the output with the standard library `printf` to ensure correctness.
-
-### Example usage:
-
-1. Create a `main.c` file and include the necessary header:
-
-   ```c
-   #include "ft_printf.h"
-
-   int main() {
-       ft_printf("Hello, %s!\n", "World");
-       ft_printf("Hexadecimal: %x\n", 255);
-       ft_printf("Character: %c\n", 'A');
-       return 0;
-   }
-   ```
-
-2. Compile the program:
-
-   ```bash
-   gcc -o test_program main.c ft_printf.a
-   ```
-
-3. Run the test program:
-
-   ```bash
-   ./test_program
-   ```
+```
+Printf/
+├── includes/
+│   └── ft_printf.h         # Function prototypes and includes
+├── src/
+│   ├── ft_printf.c         # Main printf logic and format parsing
+│   ├── ft_putnbr_base.c    # Number conversion to base (hex, dec)
+│   └── str_utils.c         # Custom string utility functions
+├── Makefile                # Build script for the static library
+└── .gitignore              # Standard ignores
+```
 
 ---
 
-## Contributing
+## 🧠 Key Concepts
 
-Contributions are welcome! If you'd like to improve or extend the **ft\_printf** project, feel free to fork the repository and submit a pull request.
-
-### How to Contribute:
-
-1. Fork the repository.
-2. Clone your fork to your local machine.
-3. Make your changes or improvements.
-4. Submit a pull request with a detailed description of your changes.
-
-### Code Style:
-
-Please adhere to the **[42 coding standards](https://github.com/42School/coding-standards)**.
+* Use of `va_list`, `va_start`, `va_arg`, and `va_end`
+* Manual number-to-string conversion in arbitrary bases
+* Handling edge cases in formatting (null strings, pointer alignment)
+* Clean modular code separation
 
 ---
 
-## License
+## 📌 Notes
 
-This repository is licensed under the MIT License. See the [LICENSE](../../LICENSE) file for more details.
+* Only the functions `write`, `malloc`, and `free` are used (per 42 restrictions)
+* Code follows the [42 Norm](https://github.com/42School/norminette)
 
+---
+
+## 📜 License
+
+This project is part of the 42 curriculum and is shared for educational and reference purposes only.
+
+---
 
 
