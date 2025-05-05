@@ -1,0 +1,129 @@
+
+# ft_printf
+
+## About
+
+**ft_printf** is a custom implementation of the `printf` function in C. This project aims to help understand how the standard `printf` function works by implementing a version of it from scratch. The project involves working with variable argument lists, type casting, and custom formatting.
+
+---
+
+## Features
+
+The **ft_printf** function supports several format specifiers:
+
+- **%s**: String
+- **%d / %i**: Signed integers
+- **%x / %X**: Unsigned hexadecimal integers
+- **%c**: Character
+- **%p**: Pointer address
+- **%u**: Unsigned integers
+- **%%**: Literal percent sign
+
+Additional features such as width and precision formatting may also be supported depending on your implementation.
+
+---
+
+## Table of Contents
+
+- [About ft_printf](#about)
+- [Features](#features)
+- [Compiling ft_printf](#compiling-ft_printf)
+- [Testing ft_printf](#testing-ft_printf)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## Compiling ft_printf
+
+### Steps to compile:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/vinimoura99/42core.git
+````
+
+2. Navigate to the `ft_printf` directory:
+
+   ```bash
+   cd 42core/ft_printf
+   ```
+
+3. Run `make` to compile the library:
+
+   ```bash
+   make
+   ```
+
+   This will generate the `ft_printf.a` static library.
+
+4. To clean up the compiled files:
+
+   ```bash
+   make clean
+   ```
+
+5. To remove all compiled objects and the `.a` file:
+
+   ```bash
+   make fclean
+   ```
+
+---
+
+## Testing ft\_printf
+
+To test your **ft\_printf** implementation, create a test program that calls `ft_printf` with various format specifiers and compare the output with the standard library `printf` to ensure correctness.
+
+### Example usage:
+
+1. Create a `main.c` file and include the necessary header:
+
+   ```c
+   #include "ft_printf.h"
+
+   int main() {
+       ft_printf("Hello, %s!\n", "World");
+       ft_printf("Hexadecimal: %x\n", 255);
+       ft_printf("Character: %c\n", 'A');
+       return 0;
+   }
+   ```
+
+2. Compile the program:
+
+   ```bash
+   gcc -o test_program main.c ft_printf.a
+   ```
+
+3. Run the test program:
+
+   ```bash
+   ./test_program
+   ```
+
+---
+
+## Contributing
+
+Contributions are welcome! If you'd like to improve or extend the **ft\_printf** project, feel free to fork the repository and submit a pull request.
+
+### How to Contribute:
+
+1. Fork the repository.
+2. Clone your fork to your local machine.
+3. Make your changes or improvements.
+4. Submit a pull request with a detailed description of your changes.
+
+### Code Style:
+
+Please adhere to the **[42 coding standards](https://github.com/42School/coding-standards)**.
+
+---
+
+## License
+
+This repository is licensed under the MIT License. See the [LICENSE](../../LICENSE) file for more details.
+
+
+
