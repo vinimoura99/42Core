@@ -1,51 +1,85 @@
-🏰 Exam_2 Tester 🏰
-(still working on it)
+# ⚔️ **exam\_2 Tester** ⚔️
 
-Welcome, brave coder, to Exam_2 Tester! ⚔️✨
+🌟 **Welcome, brave coder!** 🌟 Your journey through the realm of coding challenges begins now. **exam\_2 Tester** is your ultimate training ground for **Exam Rank 2**. It’s a battle of logic and creativity where you’ll tackle complex coding tasks, guided by your trusty scripts and empowered by **themed feedback**.
 
-Embark on a quest through 4 levels of coding challenges, each more perilous and rewarding than the last. Whether you're sharpening your skills for Exam Rank 2 or testing your abilities in battle against the coding beasts, exam_2 Tester is here to guide you, challenge you, and reward you with glory in the form of ASCII art and personalized feedback.
+## 🌍 **Are you ready to embark on this quest?** 🌍
 
-This system is your training ground—your sword in the battle against the programming tasks that await.
-⚔️ Features of Your Adventure ⚔️
+## 🚀 **Features of Your Coding Adventure** 🚀
 
-    4 Levels of Code Sorcery: Venture through four distinct levels, each containing coding tasks to hone your skills and test your mettle.
+### ⚔️ **4 Levels of Code Mastery**
 
-    Automated Test Warriors: Armed with tester.sh scripts, the system will automatically evaluate your code and provide detailed feedback for all functions.
+* Venture through 4 challenge-filled levels, each more difficult and rewarding than the last. Solve coding tasks and sharpen your skills as you rise through the ranks.
 
-    Dynamic ASCII Art: Watch as your coding journey unfolds with immersive ASCII art that shifts with your progress. Encounter the White Wolf, Darth Vader, and even the Stranger Things crew as you level up.
+### ⚙️ **Automated Test Warriors**
 
-    Themed Feedback: After every challenge, receive themed feedback inspired by fantasy, adventure, and space lore. Be motivated by the themes of Victory or, perhaps, face the Error warning as you regroup and try again.
+* Each level comes with `tester.sh` scripts that automatically evaluate your code. Get **detailed feedback** on your code’s performance after each task.
 
-    A Quest in the Command Line: Straightforward, fast, and simple to set up. Just clone the repository, run the script, and your coding adventure begins.
+### 🎨 **Dynamic ASCII Art**
 
-⚡ Installation: Prepare for Battle ⚡
+* Watch as the adventure unfolds with unique ASCII art at each level. Encounter **White Wolves**, **Darth Vader**, and **Stranger Things** characters as you progress!
 
-Clone the repository to your local machine:
+### 📚 **Themed Feedback**
 
+* Receive feedback that feels straight out of a fantasy novel. Will you get the **Victory** banner or face the **Error** of defeat? Every task brings a new surprise!
+
+### ⚡ **One-Command Setup**
+
+* Just clone and run the `grade_system.sh` script to start your journey. **No complicated setup needed!**
+
+---
+
+## ⚡ **Installation: Prepare for Battle** ⚡
+
+### Step 1: Clone the repository to your local machine
+
+```bash
 git clone https://github.com/vinimoura99/exam_2_tester.git
+```
 
-Navigate into your new training grounds:
+### Step 2: Move into your project directory
 
+```bash
 cd exam_2_tester
+```
 
-🛡️ How to Begin Your Quest 🛡️
+### Step 3: Get ready to embark on your adventure!
 
-To start your adventure, simply run the following incantation:
+Run the main script to start the quest:
 
+```bash
 ./grade_system.sh
+```
 
-From here, you will be guided through the levels, solving challenges, and testing your code. Depending on your performance, the system will reward you with a variety of ASCII art to motivate your journey. Get ready to encounter legends like the White Wolf, Stranger Things, and even cosmic Astronauts.
-📝 Script Breakdown: Your Code Adventure 📝
+From here, you’ll be guided through each level, solving challenges and getting **awesome ASCII art** and feedback after each task.
 
-    grade_system.sh: The main hub of your adventure! This script will take you through the levels, displaying ASCII art as you progress and providing dynamic feedback to help you improve.
+---
 
-    tester.sh: Each level comes with its own tester.sh script that checks your code against predefined tests, giving you valuable feedback for improvement.
+## ⚔️ **How It Works: Your Code Adventure** ⚔️
 
-    ASCII Art: Let the art guide your journey. Depending on your progress, you might see the majestic White Wolf, the imposing Darth Vader, or even an Astronaut lost in space—each one marking a moment in your coding conquest.
+### 🔮 **grade\_system.sh**
 
-🏆 Contribute to the Journey 🏆
+This is your hub. It will take you through the challenges, dynamically adjusting the ASCII art and feedback based on your progress and results.
 
-The path is long, and the road to perfection is endless. If you wish to contribute to this quest—be it with new challenges, enhanced test cases, or new ASCII art to adorn your journey—open a pull request and join us in shaping this adventure!
-📜 License 📜
+### 🛡️ **tester.sh**
 
-This project is open source and licensed under the MIT License. You are free to wield it as you see fit—may it lead you to great things.
+Each challenge level has a script that will **test your code**, checking if you’ve completed the tasks correctly. Detailed results will guide you forward to the next challenge.
+
+### 🖼️ **ASCII Art**
+
+As you progress through the levels, you’ll unlock **epic ASCII artwork** celebrating your achievements, from the **White Wolf** to **Astronauts**. It’s all part of your immersive adventure!
+
+---
+
+## 🏆 **Contribute to the Code Quest** 🏆
+
+Do you have what it takes to add more challenges or new ASCII art to the adventure? Open a pull request and join the journey! Contributions are always welcome, whether you’re enhancing the tests or designing new **epic ASCII art**.
+
+---
+
+## 📜 **License** 📜
+
+This project is **open-source** and licensed under the MIT License. Feel free to use it, improve it, and make your own adventure!
+
+---
+
+### ✨ **Good luck, coder. The quest awaits!** ✨
