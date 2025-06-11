@@ -6,44 +6,44 @@
 /*   By: vmoura-d <vmoura-d@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 14:27:28 by vmoura-d          #+#    #+#             */
-/*   Updated: 2025/06/11 12:13:48 by vmoura-d         ###   ########.fr       */
+/*   Updated: 2025/06/11 14:36:24 by vmoura-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* 
+/*
 ✅ Lógica Geral :
 
-    Se a pilha já estiver ordenada ou tiver 1 ou nenhum elemento, não faz nada.
+	Se a pilha já estiver ordenada ou tiver 1 ou nenhum elemento, não faz nada.
 
-    Usa algoritmos otimizados para poucos elementos:
+	Usa algoritmos otimizados para poucos elementos:
 
-        2 elementos: faz um sa se estiverem fora de ordem.
+		2 elementos: faz um sa se estiverem fora de ordem.
 
-        3 elementos: analisa os ranks e faz combinações de sa, ra, rra para 
-        ordenar.
+		3 elementos: analisa os ranks e faz combinações de sa, ra, rra para
+		ordenar.
 
-        4 ou 5 elementos: empurra os menores elementos para stack_b, ordena 
-        os 3 restantes e depois traz os menores de volta com pa.
+		4 ou 5 elementos: empurra os menores elementos para stack_b, ordena
+		os 3 restantes e depois traz os menores de volta com pa.
 
 🔨 Resumo por função :
 
-    📍 sort_two:
-    Se o elemento do topo for maior que o segundo, faz sa.
+	📍 sort_two:
+	Se o elemento do topo for maior que o segundo, faz sa.
 
-    📍 sort_three:
-    Detecta a posição dos ranks (valores) e aplica a menor sequência possível 
-    de sa, ra, rra para ordenar 3 elementos.
+	📍 sort_three:
+	Detecta a posição dos ranks (valores) e aplica a menor sequência possível
+	de sa, ra, rra para ordenar 3 elementos.
 
-    📍 sort_four:
-    Move o menor elemento (rank 0) para stack_b, ordena os 3 restantes e
-     depois faz pa.
+	📍 sort_four:
+	Move o menor elemento (rank 0) para stack_b, ordena os 3 restantes e
+		depois faz pa.
 
-    📍 sort_five:
-    Move os dois menores elementos (ranks 0 e 1) para stack_b, ordena os 3 
-    restantes e traz os dois de volta com pa.
+	📍 sort_five:
+	Move os dois menores elementos (ranks 0 e 1) para stack_b, ordena os 3
+	restantes e traz os dois de volta com pa.
 
-    📍 sort_small_stack:
-    Decide qual das funções acima usar com base no tamanho da pilha a.*/
+	📍 sort_small_stack:
+	Decide qual das funções acima usar com base no tamanho da pilha a.*/
 
 #include "../Includes/push_swap.h"
 
@@ -68,19 +68,7 @@ static void	sort_three(t_stack *a)
 	r2 = a->top->next->next->rank;
 	if (r0 < r1 && r1 < r2)
 		return ;
-	if (r0 < r2 && r2 < r1)
-	{
-		rra(a, 1);
-		sa(a, 1);
-	}
-	else if (r1 < r0 && r0 < r2)
-		sa(a, 1);
-	else if (r2 < r0 && r0 < r1)
-		rra(a, 1);
-	else if (r1 < r2)
-		ra(a, 1);
-	else
-		sa(a, 1);
+	exec_case(r0, r1, r2, a);
 }
 
 static void	sort_four(t_stack *stack_a, t_stack *stack_b)

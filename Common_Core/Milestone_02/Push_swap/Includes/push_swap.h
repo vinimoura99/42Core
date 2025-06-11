@@ -6,7 +6,7 @@
 /*   By: vmoura-d <vmoura-d@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 13:10:41 by vmoura-d          #+#    #+#             */
-/*   Updated: 2025/06/11 13:10:42 by vmoura-d         ###   ########.fr       */
+/*   Updated: 2025/06/11 14:42:38 by vmoura-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void					free_resources(t_stack *stack_a, t_stack *stack_b,
 int						find_pos(t_stack *stack, int target_rank);
 void					rotate_to_top(t_stack *a, int pos, int size);
 void					bring_to_top_a(t_stack *a, int target_rank);
+void					exec_case(int r0, int r1, int r2, t_stack *a);
 
 // Common_utils
 int						is_sorted(t_stack *stack);

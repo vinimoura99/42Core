@@ -6,11 +6,11 @@
 /*   By: vmoura-d <vmoura-d@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 14:29:34 by vmoura-d          #+#    #+#             */
-/*   Updated: 2025/06/11 12:25:24 by vmoura-d         ###   ########.fr       */
+/*   Updated: 2025/06/11 14:44:35 by vmoura-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* 
+/*
 
 find_pos 🔎📍:
 Procura na pilha a posição do nó com o rank igual ao target_rank.
@@ -20,12 +20,12 @@ rotate_to_top 🔄⬆️ :
 Roda a pilha para colocar o elemento da posição pos no topo, usando o
 menor número de movimentos:
 
-    📍se pos está na metade superior, faz rotações normais (ra)
+	📍se pos está na metade superior, faz rotações normais (ra)
 
-    📍se está na metade inferior, faz rotações reversas (rra)
+	📍se está na metade inferior, faz rotações reversas (rra)
 
 bring_to_top_a 🎯⬆️:
-Traz para o topo da pilha a o elemento com rank igual a target_rank, 
+Traz para o topo da pilha a o elemento com rank igual a target_rank,
 usando as funções acima.
 
 */
@@ -77,4 +77,24 @@ void	bring_to_top_a(t_stack *a, int target_rank)
 	if (pos <= 0)
 		return ;
 	rotate_to_top(a, pos, a->size);
+}
+
+void	exec_case(int r0, int r1, int r2, t_stack *a)
+{
+	if (r0 > r1 && r1 < r2 && r0 < r2)
+		sa(a, 1);
+	else if (r0 > r1 && r1 > r2)
+	{
+		sa(a, 1);
+		rra(a, 1);
+	}
+	else if (r0 > r1 && r1 < r2 && r0 > r2)
+		ra(a, 1);
+	else if (r0 < r1 && r1 > r2 && r0 < r2)
+	{
+		sa(a, 1);
+		ra(a, 1);
+	}
+	else if (r0 < r1 && r1 > r2 && r0 > r2)
+		rra(a, 1);
 }
