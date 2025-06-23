@@ -20,12 +20,19 @@
 # include <stdio.h>
 # include <string.h>
 
-# define TILE 64
+# define TILE 32
 // Direções do jogador (para o array img_player)
 # define DIR_DOWN  0
 # define DIR_UP    1
 # define DIR_LEFT  2
 # define DIR_RIGHT 3
+
+typedef struct s_enemy
+{
+    int x;
+    int y;
+    int direction; // 0: up, 1: down, 2: left, 3: right
+} t_enemy;
 
 typedef struct s_game
 {
@@ -43,6 +50,11 @@ typedef struct s_game
 
     // Imagens
     void    *img_wall;
+    void *img_wall_top;
+    void *img_wall_bottom;
+    void *img_wall_left;
+    void *img_wall_right;
+    void *img_trap;
     void    *img_floor;
     void    *img_player[4];
     void    *img_chest;
@@ -51,6 +63,9 @@ typedef struct s_game
     void    *img_victory;
 
     int     player_dir;
+    int enemy_count;
+    t_enemy *enemies;
+     void *img_enemy;  
 }   t_game;
 
 void    init_game(t_game *game, char *map_path);
@@ -63,5 +78,7 @@ char    **read_map(char *file, t_game *game);
 void    free_map(char **map);
 int     count_collectibles(char **map);
 int ft_printf(const char *format, ...);
+void validate_map(t_game *g);
+int move_enemies(void *param);
 
 #endif

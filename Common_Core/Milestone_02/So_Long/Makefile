@@ -14,14 +14,14 @@
 #                            Makefile para baus_do_guerreiro                   #
 # **************************************************************************** #
 
-NAME = baus_do_guerreiro
+NAME = so_long
 
 # Compilador e flags
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 # Fontes do projeto
-SRC = main.c game.c map.c render.c events.c utils.c
+SRC = main.c game.c map.c render.c events.c utils.c validate_map.c
 OBJ = $(SRC:.c=.o)
 
 # Caminho e uso da MiniLibX
