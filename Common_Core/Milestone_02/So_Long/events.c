@@ -6,7 +6,7 @@
 /*   By: vmoura-d <vmoura-d@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 18:32:20 by vmoura-d          #+#    #+#             */
-/*   Updated: 2025/06/22 18:32:21 by vmoura-d         ###   ########.fr       */
+/*   Updated: 2025/06/24 18:43:27 by vmoura-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,11 @@ int handle_key(int keycode, t_game *g)
     if (g->map[ny][nx] == '1')
         return 0;
 
+    else if (g->map[ny][nx] == 'T')
+    {
+        write(1, "Você caiu em uma armadilha! Game Over.\n", 39);
+        exit(EXIT_FAILURE);
+    }
     // Verificar colisão com inimigos
     for (int i = 0; i < g->enemy_count; i++)
     {
@@ -137,7 +142,7 @@ int handle_key(int keycode, t_game *g)
             exit(EXIT_FAILURE);
         }
     }
-
+     
     // Verificar colisão com baús (collectibles)
     if (g->map[ny][nx] == 'C')
     {
