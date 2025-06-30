@@ -6,31 +6,47 @@
 /*   By: vmoura-d <vmoura-d@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 18:27:18 by vmoura-d          #+#    #+#             */
-/*   Updated: 2025/06/22 18:31:04 by vmoura-d         ###   ########.fr       */
+/*   Updated: 2025/06/27 12:12:44 by vmoura-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-t_game *global_game; // Variável global para armazenar o estado do jogo
-
-int main(int argc, char **argv)
+int	close_game(t_game *g)
 {
-    t_game game;
+	if (!g)
+		exit(0);
+	destroy_images(g);
+	if (g->win)
+		mlx_destroy_window(g->mlx, g->win);
+	if (g->mlx)
+	{
+		mlx_destroy_display(g->mlx);
+		free(g->mlx);
+	}
+	if (g->map)
+	{
+		free_map(g->map);
+		g->map = NULL;
+	}
+	if (g->enemies)
+	{
+		free(g->enemies);
+		g->enemies = NULL;
+	}
+	exit(0);
+}
 
-    if (argc != 2)
-    {
-        ft_printf("\033[0;31mUso: ./baus_do_guerreiro <mapa.ber>\n\033[0m");
-        return (1);
-    }
-    init_game(&game, argv[1]);
-    validate_map(&game);
+int	main(int argc, char **argv)
+{
+	const char	*filepath;
+	const char	*basename;
 
-    global_game = &game; // Inicializar a variável global
-
-    mlx_loop_hook(game.mlx, move_enemies, &game);
-    mlx_hook(game.win, 2, 1L<<0, handle_key, &game);
-    mlx_hook(game.win, 17, 0L, close_game, &game);
-    mlx_loop(game.mlx);
-    return (0);
+	if (!check_args(argc))
+		return (1);
+	filepath = argv[1];
+	basename = get_basename(filepath);
+	if (!validate_filename(basename))
+		return (1);
+	return (start_game(filepath));
 }
